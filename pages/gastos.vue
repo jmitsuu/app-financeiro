@@ -27,8 +27,7 @@ const controlSearch = ref(true);
 async function getCategories() {
   const { data } = await useFetch(`/api/categories/dbSuperbase`);
   categories.value = data.value.data;
-  editOff.value = true;
-  categories.value = data.value;
+
 }
 async function getItems() {
   const { data, refresh } = await useFetch("/api/listItems/dbSupeItems");
