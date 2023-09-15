@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --open",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/google-fonts": "^3.0.2",
+    "@nuxtjs/supabase": "^1.1.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@sidebase/nuxt-auth": "^0.6.0-beta.5",
+    "autoprefixer": "^10.4.15",
+    "nuxt": "^3.7.0",
+    "nuxt-icon": "^0.5.0",
+    "postcss": "^8.4.29"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "@supabase/supabase-js": "^2.33.2",
+    "appwrite": "^12.0.0",
+    "chart.js": "^4.4.0",
+    "dotenv": "^16.3.1",
+    "node-appwrite": "^10.0.1",
+    "pinia": "^2.1.6",
+    "v-click-outside": "^3.2.0",
+    "vue-chartjs": "^5.2.0"
+  }
+}
