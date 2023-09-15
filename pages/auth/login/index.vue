@@ -1,5 +1,5 @@
 <script setup>
-import account from "../../../composables/useAppwrite";
+
 const message = ref('');
 const email = ref();
 const password = ref();
@@ -21,12 +21,12 @@ const login = async () => {
         message.value = 'usuario ou senha errados'
        
       } else {
-        console.log("true");
+      
       localStorage.setItem(
         "credentials",
         JSON.stringify({ id: item.id, name: item.name, email:item.email })
       );
-      authorization(item.id);
+      authorization(item);
       spin.value = true;
       waitMessage.value = true;
         message.value = 'Login Realizado'
@@ -38,10 +38,20 @@ const login = async () => {
 };
 
 async function authorization(id) {
-  await useFetch(`/api/auth/dbSupUptoken?id=${id}`, {
+    if(!id.auth){
+        await useFetch(`/api/auth/dbSupUptoken?id=${id.id}`, {
     method: "patch",
     body: true,
   });
+    }else{
+        if(id.auth){
+            
+            await useFetch(`/api/auth/dbSupUptoken?id=${id.id}`, {
+    method: "patch",
+    body: true,
+  });
+        }
+    }
 }
 
 function redirect() {

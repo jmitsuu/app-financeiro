@@ -18,7 +18,16 @@ const data = new Date()
    price.value.push(item.total[1])
   })
 }
-
+watch(dataStore.value, (new2, old)=>{
+if(new2){
+  dataStore.value =  store.duplicados[0]
+  if(!dataStore.value) return;
+  dataStore.value.filter(item=>{
+   date.value.push([item.total[0].slice(8,15)])
+   price.value.push(item.total[1])
+  })
+}
+})
 const chartData = ref({
   labels: date,
   datasets: [
@@ -34,6 +43,11 @@ const chartOptions = ref({
   maintainAspectRatio: false,
 })
 getdataArr()
+
+onMounted(()=>{
+ console.log( store.duplicados[0])
+})
+
 </script>
 <template>
   <div class="relative ">

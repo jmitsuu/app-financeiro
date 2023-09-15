@@ -1,7 +1,5 @@
 <script setup>
-import account from "../../composables/useAppwrite";
 
-import { ID } from "node-appwrite";
 
 // const message = ref(false)
 // const email = ref()

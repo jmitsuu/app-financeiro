@@ -9,11 +9,12 @@ const newInput = ref();
 const categories = ref();
 const logout = ref()
   const rId = Math.random() * (5614654125 - 20516) + 4256;
-definePageMeta({
-  middleware: [
-    'auth',
-  ],
-});
+// definePageMeta({
+
+//   middleware: [
+//     'auth',
+//   ],
+// });
 async function getCategor() {
   const { data } = await useFetch(`/api/categories/dbSuperbase`, {});
 

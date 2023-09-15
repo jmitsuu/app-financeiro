@@ -4,7 +4,6 @@
     <div class=" ">
       
       <div class=" flex justify-center   bg-blue-950 ">  
-    
       <NuxtPage />
       
     </div>

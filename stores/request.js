@@ -32,6 +32,9 @@ duplicados.value.push(allDate.value)
 function getUserName(){
   const cred = localStorage.getItem('credentials')
   const storage = JSON.parse(cred)
+  if(!storage){
+    window.location.href="/auth/login"
+  }
   userName.value =storage.name
 idSession.value = storage.id
 emailSession.value = storage.email
@@ -39,7 +42,7 @@ emailSession.value = storage.email
 
 
 async function closeSession(){
-
+ localStorage.removeItem("credentials")
   await useFetch(`/api/auth/dbSupUptoken?id=${idSession.value}`, {
                     method: "patch",
                     body: false,

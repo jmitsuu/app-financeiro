@@ -20,9 +20,9 @@ const listTotal = ref();
 const searchItems = ref();
 const reloadItems = ref([]);
 const controlSearch = ref(true);
-definePageMeta({
-  middleware: ["auth"],
-});
+// definePageMeta({
+//   middleware: ["auth"],
+// });
 
 async function getCategories() {
   const { data } = await useFetch(`/api/categories/dbSuperbase`);
@@ -58,7 +58,7 @@ async function getItems() {
   store.getGraph(dataGraph.value);
   setTimeout(() => {
     store.getGraph(dataGraph.value);
-  }, 8000);
+  }, 1000);
 
   const numeros = totalPrices.value;
   let soma = 0;
@@ -83,7 +83,6 @@ function createItems() {
     method: "post",
     body: [items, store.emailSession]
   });
-
   setTimeout(async () => {
     //ok this is as a bad idea iknow, but i searching somthing better than this
     window.location.reload();
@@ -129,7 +128,7 @@ onMounted(() => {
     class="w-full flex m-2 overflow-y-scroll rounded-t-3xl bg-gradient-to-b from-[#663399]"
   >
     <div
-      class="mx-auto mt-8 w-full xl:w-4/6 rounded-md bg-white bg-opacity-70 p-4"
+      class="mx-auto mt-8 w-full xl:w-4/6 rounded-md bg-white shadow-2xl shadow-black bg-opacity-70 p-4"
     >
       <section class="mb-2 w-full">
         <div class="relative flex items-center">
