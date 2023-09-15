@@ -46,14 +46,6 @@ export default defineNuxtConfig({
     '/modify-headers-route': { headers: { 'x-magic-of': 'nuxt and vercel' } },
     '/spa': { ssr: true },
   },
-  supabase: {
-  client: {
-      auth: {
-          persistSession: true,
-          storage: sessionStorage
-      }
-  }
-}
  
   
 })
