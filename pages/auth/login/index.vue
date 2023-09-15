@@ -44,11 +44,11 @@ async function authorization(id) {
   });
 }
 
-function redirect() {
-  setTimeout(() => {
-    window.location.href = "/gastos";
-  }, 2000);
-}
+// function redirect() {
+//   setTimeout(() => {
+//     window.location.href = "/gastos";
+//   }, 2000);
+// }
 </script>
 
 <template>
@@ -73,7 +73,7 @@ function redirect() {
           class="w-64 py-2 rounded-sm outline-none text-gray-600 font-semibold px-1"
           placeholder="Senha"
         />
-
+  <NuxtLink to="/gastos">
         <button
           @click="redirect"
           class="mt-3 py-1 px-2 rounded-md bg-gray-300 text-slate-600 hover:text-slate-200 transition-all font-semibold w-32 mx-auto hover:bg-gray-700"
@@ -92,6 +92,7 @@ function redirect() {
           </span>
         
         </button>
+      </NuxtLink>
 
         <NuxtLink to="/auth/register">
           <p class="text-center cursor-pointer text-semibold text-gray-600">
